@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Blog post describing the challenges and anaylsis behind the design and implemention of the new broadcast and projection system for my local church.">
+    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="icon" type="image/x-icon" href="/img/personal_website_icon_no_text.svg">
+    <!-- Custom styles for project page -->
+    <link rel="stylesheet" href="../blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/scripts/theme-switcher.js" defer></script>
+    <title>Greentree Video System</title>
+</head>
+
+<body>
+    <main class="container">
+        <!-- Navbar -->
+        <nav>
+            <ul>
+                <li><strong>Anthony L.</strong></li>
+            </ul>
+            <ul>
+                <li><a style="background-color:transparent" href="../../index.html">Home</a></li>
+                <li><a style="background-color:transparent" href="../../projects.html">Projects</a></li>
+                <li><a style="background-color:transparent" href="../blog.html">Blog</a></li>
+            </ul>
+        </nav>
+        <!-- Navbar -->
+
+
+        <!-- Blog Post -->
+        <section id="blog">
+            <hgroup>
+                <h1>Greentree Video System</h1>
+                <h2>How I designed and produced the new projection and broadcast system for my local church</h2>
+            </hgroup>
+            <!--Cards-->
+
+            <main class="container">
+                <figure>
+                    <img src="/img/worship_team.jpg" alt="Greentree Church's worship team performing during service">
+                    <figcaption>Image from <a href="https://www.instagram.com/pastorkylehuber/">Pastor Kyle Huber's
+                            Instagram</a></figcaption>
+                </figure>
+
+                <p>In 2018, I was asked by a member of my local church if I'd be interested in serving the church by
+                    joining in our tech/projection team. Services were made in a church projection software called
+                    EasyWorship, and it worked decently for the most part. Sunday’s service was recorded onto a
+                    Panasonic AG-DVC30, which recorded to Mini-DV cassette tapes and released in 2003. </p>
+                <p>The image for projection was routed through from the PC to S-Video to an S-Video amplifier, S-Video
+                    amplifier to S-Video recorder, S-Video recorder to Component cable, Component cable to VGA Splitter,
+                    VGA Splitter to VGA distributor, VGA distributor to another VGA Splitter, VGA Splitter to
+                    VGA-to-HDMI scaler, and finally HDMI to HDMI splitter before reaching our projectors. Just from the
+                    list of equipment, it’s easy to see there were far too many pieces of equipment with far too many
+                    points of failure. But it worked for our church for the most part.</p>
+                <figure>
+                    <img src="/blog/posts/img/old_setup_collage.jpg"
+                        alt="A collage of all the old equipment needed to run the service in house">
+                    <figcaption>
+                        We had a lot to work with, and too many points of failure to be comfortable
+                    </figcaption>
+                </figure>
+                <p>Beginning in 2019, with the rise of a certain respiratory illness, church was forced to move online
+                    to live streaming. The tech team began using a MEVO Start, a wireless live streaming solution. The
+                    MEVO paired over Bluetooth to an iPad, where the iPad was used both to control the camera remotely
+                    as well as add media such as song lyrics to our live stream.</p>
+                <h4>Houston, we have a problem</h4>
+                <p>This setup posed several issues. With a connection over Bluetooth, we had live streaming issues
+                    constantly. Frequent disconnects over Bluetooth left us unable to change settings on our camera,
+                    camera overheating even in the shade, and worst of all, disconnects from the internet entirely in
+                    the middle of livestreaming a service, forcing us to try and restart the livestream, where even that
+                    a coin flip of if we’d have a strong enough signal to continue our service online.</p>
+                <p>Given the amount of trouble we’d been having with this, as well as some flooding in the church office
+                    causing some remodeling, the church ultimately decided this was as good as time as any for a
+                    renovation to our sanctuary to begin, including a new projection and video system to replace this
+                    old one.</p>
+                <h4>A Simple Start</h4>
+                <p>The process of course begins with problems we want this new solution to solve.</p>
+                <p>The frequency of disconnects and livestreaming issues meant we needed our new broadcasting setup to
+                    be reliable and redundant, with fail safes in place for, if any, disconnects in service were to
+                    occur. </p>
+                <p>We also need wanted to move away from the MEVO platform for live streaming, given we needed to pay
+                    $15 a month to the MEVO platform to include media on screen. This media was limited to 2 preset
+                    locations and sizes, which we used to include PowerPoint slides in the top right corner for song
+                    lyrics. While much smaller than we’d have liked, it worked for the time. But we wanted to move away
+                    from the platform if simply adding lyrics for our audience would be a service worthy of a monthly
+                    fee.</p>
+                <h4>The Camera</h4>
+                <p>The camera was also very limiting, not just in connection and speed, but quality. The MEVO works by
+                    using a 4K sensor which is then downscaled to a 1080p image. Quality is also limited to the camera’s
+                    bitrate, which maxes out at 3.5Mbp/s.</p>
+                <p>Given it’s absurd FOV (150 degrees), the camera also used fisheye reduction to flatten the image.
+                    This gives the camera the option of offering many different shots. Need a wide? Keep the image back.
+                    Need a closeup? Zoom in a bit more, there’s your shot.</p>
+                <p>This meant that while it could offer these zoom levels in software, because the camera isn’t
+                    optically zooming in with the use of a lens, quality can diminish at closer shots. This also meant
+                    the camera needed to be very close to the presenter, which would not work when back at the sanctuary
+                    to have a camera on a tripod 4 feet from the pastor.</p>
+                <figure>
+                    <img src="/blog/posts/img/old_sunday_service_480p.jpeg" alt="Our old setup was less than ideal">
+                    <figcaption>
+                        Picture of old live stream with lyrics
+                    </figcaption>
+                </figure>
+                <p>We chose to use our newest church laptop to power this setup, given it’s performance should be more
+                    than adequate for the additional processes we’d be throwing at it compared to other computers in our
+                    church being from the late 2000’s not exactly being up to the task.</p>
+                <p>While the computer was certainly powerful enough, it simply lacked the port selection (4 USB-C ports,
+                    2 of which being Thunderbolt 3 capable) so this was another small issue to be solved.</p>
+                <figure>
+                    <img src="/blog/posts/img/macbook_ports.jpeg" alt="Macbook Air Ports">
+                    <figcaption>
+                        Image from <a href="https://www.macworld.co.uk/how-to/add-ports-macbook-3663630/">Macworld</a>
+                    </figcaption>
+                </figure>
+                <p>Finally, our projectors would also needed to be replaced. We were dealing with quite a lot of ambient
+                    light in our sanctuary, both artificial but mainly large windows in the room. Because of this, these
+                    new projectors would need be extremely bright, much brighter than the old ones if we wanted to
+                    overcome this issue. The TVs we were using were also far too small for song lyrics and other media,
+                    so these would need to be replaced or repurposed as we could have a much bigger screen for the
+                    congregation.</p>
+                <h4>To the drawing board</h4>
+                <p>Given these problems, I tackled on one at a time.</p>
+                <p>First, the projector screen. Given the old TV’s size, and some constraints we’d need to work with for
+                    putting sound panels on the wall, I took some photos of the screens on the wall and hopped into
+                    Photoshop to mock up some shots of just how large we could go.</p>
+                <figure>
+                    <img src="/blog/posts/img/proj-mockup-right.png"
+                        alt="A mockup of where the projector screen would be installed">
+                    <figcaption>
+                        A mockup was necessary to get a realistic picture of the size limits of just large a screen we
+                        could use
+                    </figcaption>
+                </figure>
+                <p>After getting feedback from the rest of the renovation team and pastors, we decided a projector
+                    screen at 130” would work best given how large we wanted the image to be and some constraints on how
+                    big we could go, given the vents on either side of the screen being our cutoff. We couldn’t quite
+                    have a movie theater experience, but what we had would work.</p>
+                <p>Onto the issue of ambient light, the projector screens would also need to combat this. </p>
+                <p>I ultimately decided on the Screen Innovations 3 Series Fixed 133 Inch Diagonal 16:9 Fixed Frame
+                    Screen. The sizing was perfect at just a few inches above what we had in mind, and given it was made
+                    with ALR (ambient light rejecting) fabric, it was exactly what we needed to solve our ambient light
+                    issues, along with a powerful enough projector.</p>
+                <h4>Projectors</h4>
+                <p>The projectors were the next task. They needed to be far brighter than our old projectors, as well as
+                    have the connections needed to futureproof the church for its needs in the future. We did not want
+                    to have to replace these projectors entirely in 3 years because 4:3 is no longer the hottest new
+                    thing and VGA is no longer an industry standard.</p>
+                <p>With all that in mind, I decided on the Panasonic PT-RZ970BU. At 10,000 lumens, it was nearly 3 times
+                    brighter than our old projector system.</p>
+                <p>While offering HDMI and DVI-D was a nice inclusion, it was
+                    the 3G-SDI BNC connection that was the main reason that pushed me towards this projector among
+                    others offered in similar brightness and price.</p>
+                <p>SDI has been the standard for carrying video signal over long distances, as HDMI signals begin to
+                    degrade at around 50 feet, while SDI, specifically 3G-SDI that this projector offered up to, can run
+                    300 feet without issue. 3G-SDI also allows for a much higher signal bandwidth, meaning we could send
+                    full 1080p, 60fps 4:4:4 signal to have movie theater quality color and clarity for a very
+                    respectable price. </p>
+                <figure>
+                    <img src="/blog/posts/img/projector.png" alt="Panasonic">
+                    <figcaption>
+                        Not sponsored, I just love how many features it has for the price and was excited at what a
+                        great fit it was for our needs
+                    </figcaption>
+                </figure>
+                <h4>Lights, camera...oh, yeah, camera</h4>
+                <p>The camera needed to offer much higher image quality than our old one, as well as be much more
+                    reliable. It still needed to be as flexible though, as a single camera setup was easier to manage
+                    for our smaller, often one man team. It also needed to be unmanned, and have the zoom needed to
+                    include a full shot of the whole worship team, as well as a closeup of the pastors preaching at the
+                    podium.</p>
+                <p>A PTZ camera was our best bet, ultimately going with the PTZOptics 20x-SDI camera. Given it’s 20
+                    times optical zoom, we had more than enough room to get closeup of the pastors. With it being PTZ
+                    (pan, tilt, zoom), we could also remotely set presets for each angle and with the click of a remote
+                    button press, be on whatever shot we needed to show our service to an audience. </p>
+                <p>Our old friend 3G-SDI even makes an appearance, being a welcome choice in getting our signal back to
+                    the livestream.</p>
+                <h4>Speaking of live-stream, how is all this video being handled?</h4>
+                <p>The heart of this new broadcast and projection system lies in the ATEM Mini Extreme.</p>
+                <p>With up to 8 HDMI inputs, we had more than enough room for expansion if we chose to add more camera
+                    angles other than the single PTZ in the future. With built in video scalers, there was also no need
+                    for external scalers to either upscale, downscale, or change the frame rate of whatever signal we
+                    were bringing into the video switcher.</p>
+                <p>While the ATEM Mini is designed to be a video switcher, it also works very well in running the
+                    livestream itself. The ATEM Mini Extreme will record the program feed locally, to an external SSD
+                    over USB-C, as well as encode and send out the program feed online to our YouTube channel.</p>
+                <p>With an Ethernet port included, we would no longer run into any issues of a dropped connection due to
+                    a spotty WiFi signal.</p>
+                <h4>The brains of the operation</h4>
+                <p>If the ATEM Mini Extreme is the horse drawing the carriage, our computer and the software running on
+                    it is our skilled driver. </p>
+                <p>Given some issues we were having with EasyWorship, we decided to move to a near industry standard for
+                    church presentation software, ProPresenter 7.</p>
+                <p>With so many bells and whistles, it has enough rich features and settings to be the choice for large
+                    churches with much more complicated video systems than ours, while also being simple enough to use
+                    for a volunteer that it fit our needs perfectly.</p>
+                <p>PP7 offered everything we need to produce the service in house for our congregation, but what
+                    ultimately made it our choice was it’s ability to send septate feeds for different purposes.</p>
+                <p>Seeing as we were re-purposing our old TVs to be hung in the back for our worship team, it made
+                    perfect sense to use these as stage screens, for needed information for our worship team and
+                    pastoral staff. Clocks and timers for when service begins and what time it is, lyrics of the song in
+                    what’s onscreen as well as what the next verse is for the worship team, and notes for our pastor if
+                    needed added a lot of flexibility to our team.</p>
+                <p>The second video signal we would need to send out would be a differently formatted, primarily lower
+                    thirds overlay, for our livestream.</p>
+                <p>This approach of using PP7 for our projection in house, as well as overlays for our livestream, meant
+                    we could simplify our projection and livestream volunteer down to just one person. </p>
+                <p>Before, we had one man operating the MEVO with an iPad, controlling lyrics by hitting next on
+                    PowerPoint slides, while another volunteer operated the projection software, also hitting next for
+                    each lyric for our congregation in house. This was a redundant task, which made sense to simplify
+                    down to a single role of possible.</p>
+                <h4>The Big Picture</h4>
+                <p>To fully wrap my head around all the different parts needed to get the video system together, I
+                    hopped to my favorite diagramming tool draw.io and created a system overview of the projection and
+                    broadcast system.</p>
+                <figure>
+                    <img src="/blog/posts/img/drawio_design.png" alt="of the video system">
+                    <figcaption>
+                        Image of Draw.io System
+                    </figcaption>
+                </figure>
+                <p>Some additional, smaller pieces of equipment were needed, such as Sonnect Echo Express Expansion
+                    Chassis to add PCI-E cards to give us additional IO for our Macbook, such as the SDI outputs we
+                    needed as well as 10Gigabit Ethernet. This ensured we had all the connections we would need for now,
+                    as well as include the option for future expansion in the future if needed, without the need to for
+                    a whole new computer.</p>
+                <p>Additionally, devices such as the input for the ATEM Mini Extreme as well as the TVs for our stage
+                    displays were HDMI, so I included some Blackmagic SDI to HDMI adapters for this purpose.</p>
+                <p>Given that the ATEM Mini Extreme offers an HDMI Output that can be treated as an Auxiliary Output, we
+                    could assign any input running into the switcher as an output to our projector screens. This solved
+                    our issue of wanting to show baptisms to our in person congregation, as the camera feed could be
+                    pushed directly to the projectors using another HDMI to SDI adapters for our projectors.</p>
+                <h4>All coming together</h4>
+                <p>After finalizing the design on paper, it came time to install all the equipment onsite in the newly
+                    renovated sanctuary.</p>
+                <p>With hours of running SDI cable in walls, drop ceilings, going up in cherry pickers to install
+                    projectors, updating drivers and installing software, the system was finally coming together.</p>
+                <p>It was finally coming time to run a complete service in our new sanctuary.</p>
+                <p>And it worked perfectly! No cut outs of signal, in person or online, no complaints about video issues
+                    or volume levels from the live stream, and a very smooth service overall.</p>
+                <h4>The service explained</h4>
+                <p>Services are put together in ProPresenter 7 with a heavy use of Macros to automate a lot of work to
+                    change Looks for each set.</p>
+                <p>For example, before service begins, a slideshow runs through some slides every 10 seconds. A timer to
+                    when service begins is included in the lower left corner for both our congregation in house and our
+                    live stream online. Our stage displays show this countdown in massive text, turning yellow at 1:30
+                    minutes to our 10 AM service start and red at 30 seconds to, so our worship team and pastor knows
+                    exactly when they should be ready on stage.</p>
+                <p>When the timer hits zero, the projector screens go black so the congregation knows service is
+                    beginning, and the live stream cuts to a camera angle showing our pastor on stage.</p>
+                <p>This is cued using a Down Stream Key, which is always kept up for our livestream. What this does is
+                    takes this separate live stream look we’re sending out of PP7, which I’ve formatted to focus text at
+                    the bottom lower third of the screen, and includes alpha transparency. When nothing is displayed on
+                    a screen, this means the whole screen is transparent, so you only see the camera feed.</p>
+                <p>When text is on the screen, such as scripture or song lyrics, those receive different audience looks.
+                    Songs get bold text with a black gradient beneath. Scripture gets smaller text formatted into an
+                    image I made in Photoshop with the sermon text large and the scripture reference in a smaller
+                    portion of the image.</p>
+                <p>I’ve set up changing the audience looks (how things are formatted on the projector screens, on the
+                    stage display TVs, and our audience online) into a named and color coded Macro, so formatting the
+                    song to have large text is as simple as adding the “Song – Large Text” Macro to the first slide of a
+                    song. The macro handles the rest.</p>
+                <p>This has made it much simpler for volunteers, who won’t have to learn the entirety of what I know for
+                    PP7 to put together the slides week by week.</p>
+                <p>This also of course implies Projection and Livestream Operator down to one job, as the only thing the
+                    projectionist needs to do to run the live-stream is hit Record and Live on our ATEM Mini Extreme.
+                    The gigabit Ethernet running to the ATEM ensures a reliable connection that hasn’t failed us once in
+                    the months we’ve been using it. Text and graphics on screen are handled entirely by ProPresenter 7,
+                    so they don’t require additional thought to get that running for another audience.</p>
+                <p>The only other responsibility of the live stream operator is to change the shots for our PTZ camera,
+                    which is made possible by the official PTZOptics control app. Given the lack of line of sight to the
+                    PTZ camera, an app for control was necessary. It’s extremely simple though, with large buttons with
+                    the name of the angle I’ve already set on screen. </p>
+                <p>Is the worship team on stage and singing? Just tap on “Band” and the camera automatically pan, tilts
+                    and zooms in to the preset (PTZ does just what it needs to). Is the pastor on stage for the sermon,
+                    or to give announcements? Tap “Podium”.</p>
+                <h4>Final Thoughts</h4>
+                <p>This was a long, challenging, but ultimately very fun system to work on. It was my first time fully
+                    designing a system for a client from the ground up, every detail included. The client may be my
+                    church and I’m just a volunteer but it was a great learning experience to work with a larger scale
+                    and a budget.</p>
+                <p>It’s been a wonderful opportunity to serve my church in such a way as well as learn so much in the
+                    process. </p>
+                <p>This still a bit of a work in progress, with some additional requests coming in now to send the
+                    program feed out locally to TVs around our church campus, so expect a blog post on that at some
+                    point in the future. Why not follow me to keep up to date on what’s going on?</p>
+                <figure>
+                    <img src="/blog/posts/img/greentree_collage.jpg" alt="A collage of the final look">
+                    <figcaption>Here's a compliation of the final look</figcaption>
+                </figure>
+                <p>Thanks for reading about this process! It was a lot of work (still ongoing as well) but a lot of fun
+                    and a great way to serve my local church as well. You can look at some of the videos I've helped
+                    produced by visiting <a href="https://www.youtube.com/channel/UCR3n-u8IA8n287qSs2NtQeg">Greentree
+                        Church's Youtube page.</a></p>
+            </main>
+            <!--Cards-->
+        </section>
+        <!-- Blog Post -->
+
+        <!-- Footer -->
+        <hr>
+        <footer>
+            <small id="made-by">Made with &#128149; by Anthony Librizzi</small>
+            <div class="theme-switcher">
+                Change Theme:
+                <a href="#" data-theme-switcher="light" id="light">Light</a>
+                ·
+                <a href="#" data-theme-switcher="dark" id="dark">Dark</a>
+            </div>
+        </footer>
+        <!-- Footer -->
+    </main>
+</body>
+
+</html>
