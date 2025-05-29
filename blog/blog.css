@@ -50,15 +50,19 @@
     justify-content: flex-end;
   }
 
-  /* Adjust section with blog id for better readability */
-#blog {
-    max-width: 800px; /* Limit the width for better readability */
-    margin: 0 auto; /* Center the content */
-    line-height: 1.6; /* Improve text spacing */
-    padding: 1rem; /* Add padding for better spacing */
+footer .time-to-read {
+    float: right;
+    text-align: right;
 }
 
-/* Make blog description text smaller */
+#blog {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+
 #blog-description {
   padding-top: .4rem;
   font-size: .9rem;
@@ -66,4 +70,9 @@
 
 #blog-title{
   font-size: 30px;
+}
+
+#blog-section-description {
+  padding-top: .5rem;
+  font-size: .9rem;
 }

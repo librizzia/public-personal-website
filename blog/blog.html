@@ -16,6 +16,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="../scripts/theme-switcher.js" defer></script>
     <script defer data-domain="anthonylibrizzi.com" src="https://plausible.io/js/plausible.js"></script>
+    <script src="../scripts/time-to-read.js" defer></script>
     <title>Blog</title>
 </head>
 
@@ -38,19 +39,25 @@
         <section id="blog">
             <hgroup>
                 <h2>Blog</h2>
-                <h3>I post about projects I'm working on and things I find interesting.
+                <h3 id="blog-section-description">I post about projects I'm working on and things I find interesting.
                 </h3>
             </hgroup>
             <!--Cards-->
             <article>
                 <h2>Greentree Church Video System</h2>
                 <p>How I designed and implemented a full video system for my local church </p>
-                <a href="../blog/posts/greentree-video-system.html">Read More</a>
+                <footer>
+                    <a href="../blog/posts/greentree-video-system.html">Read More</a>
+                    <p class="time-to-read">X min read</p>
+                </footer>
             </article>
             <article>
                 <h2>Ultrasonic Cane</h2>
                 <p>How I designed an ultrasonic cane to extend the distance the blind could see</p>
-                <a href="../blog/posts/engineering-cane-project.html">Read More</a>
+                <footer>
+                    <a href="../blog/posts/engineering-cane-project.html">Read More</a>
+                    <p class="time-to-read">X min read</p>
+                </footer>
             </article>
 
             <!--Cards-->
