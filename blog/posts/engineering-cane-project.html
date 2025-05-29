@@ -68,68 +68,62 @@
                 <p>While a dedicated circuit board and microcontroller would be more ideal and compact solution, this
                     was beyond the scope of a senior year project. In addition, this project could be open sourced in
                     order provide the highest accessiblity and repairability to the blind and their caretakers.</p>
+                <p> Because of these concerns, we ended up with the Arduino Mega as the baord for this project given
+                    it's massive commmiunity, support and documentation.</p>
                 <figure>
-                    <img src="https://cdn.shopify.com/s/files/1/0438/4735/2471/products/A000067_00.front_643x483.jpg?v=1637830343"
-                        alt="Arduino Mega 2560">
-                    <figcaption>
-                        We decided on an off the shelf board to keep the scope within reach.
-                    </figcaption>
-                    <p> Because of these concerns, we ended up with the Arduino Mega as the baord for this project given
-                        it's massive commmiunity, support and documentation.</p>
-                    <figure>
-                        <img src="/blog/posts/img/cane_motor.jpg" alt="Motor for Arduino Mega 2560">
-                    </figure>
-                    <p>We also sourced a few vibration motors (for 6 total motors). Our final intention would be to have
-                        3 handle on each side of the handle that could vibrate if something was to the immediate left
-                        or right of the tip of the cane.</p>
-                    <figure>
-                        <img src="https://cdn.sparkfun.com//assets/parts/1/3/5/0/8/15569-Ultrasonic_Distance_Sensor_-_HC-SR04-01a.jpg"
-                            alt="Generic HC-SR04 Ultrasonic sensor">
-                    </figure>
+                    <img src="/blog/posts/img/cane_motor.jpg" alt="Motor for Arduino Mega 2560">
+                </figure>
+                <p>We also sourced a few vibration motors (for 6 total motors). Our final intention would be to have
+                    3 handle on each side of the handle that could vibrate if something was to the immediate left
+                    or right of the tip of the cane.</p>
+                <figure>
+                    <img src="https://cdn.sparkfun.com//assets/parts/1/3/5/0/8/15569-Ultrasonic_Distance_Sensor_-_HC-SR04-01a.jpg"
+                        alt="Generic HC-SR04 Ultrasonic sensor">
+                </figure>
 
-                    <p>Finally, we selected a generic ultrasonic sensor for the project. Operating at 5 Volts and an
-                        angle of measure of 15 degrees, it would be more than sufficient for out small project. Given
-                        it's power requirements, it could also be safetly powered by the Arduino Mega's built in power
-                        pins.</p>
-                    <p>Two sensors were intended to be used at the tip of the cane pointing out at 30 degrees and -30
-                        (330) degrees, for optimal coverage on either side to properly extend the range out that the
-                        user can detect.</p>
-                    <h4>Testing, Testing, 1, 2, 3...</h4>
-                    <figure>
-                        <img src="/blog/posts/img/cane_code.jpg"
-                            alt="Arduino IDE with code for ultrasonic sensors and it's results">
-                        <figcaption>Arduino IDE with code for ultrasonic sensors and it's results</figcaption>
-                    </figure>
-                    <p>After wiring everything rudimentarily to a breadboard, we tested all the equipment seperately.
-                    </p>
-                    <p>Using the Arduino IDE, I could plug the Arduino Mega into a computer with a USB cable, which also
-                        provided power, and load programs onto the Arduino directly. Using this method, I wrote up a few
-                        small scripts to test each piece of equipment invidually. The motors worked perfectly, wherein
-                        we could change the strength of each motor as well as control each motor seperatly, so deliver
-                        on our goal of vibratiing stronger based on distance to the detected obstacle.</p>
-                    <figure>
-                        <img src="/blog/posts/img/cane_table_compressed.png" alt="Generic HC-SR04 Ultrasonic sensor">
-                    </figure>
-                    <p>We tested the sensors accuracy by measuring the accuracy of the sensors with differently shaped
-                        objects at different distances. We tested using a small cardboard box, a large shoebox, and a
-                        small metal trash can. </p>
-                    <h4>Results and conclusion</h4>
-                    <p>According to the testing, the sensors were always accurate within 5 cm, at a range between 0 cm
-                        and 200 cm. We knew a range of 200 cm (6.5 ft) would be the best maximum range of the sensor
-                        before the readings began to be inaccurate, so we set the range between 0 cm and 200 cm, as the
-                        minimum and maximum distances to read.</p>
-                    <p>The largest issue with this project came from combining the equipment of the sensors and motors
-                        together. While all the equipment worked fine seperately, trying to mix things together would
-                        crash everything. We tested every sensor, motor and pin on the Arduino indidiaully, trying to
-                        diagnose the issue but ultimately could not figure out the cause for these errors.</p>
-                    <p>We even presented our dilemeas during our bi-monthly meeting with Lockheed Martin engineers, who
-                        we were partnered with in our high school for our engineering program.</p>
-                    <p>Every engineer we met with was equally as perplexed as we werer, but praised our diagnotic
-                        approach and our efforts into solving this problem (which after years of hindsight, I believe
-                        may have been a hardware defect on the Arduino board).</p>
-                    <p>I still consider this a valuable experience in the lengths we went through and the goals we were
-                        actually able to accomplish, as well as the validation from working engineers at Lockheed Martin
-                        that our troubles were something they also faced daily.</p>
+                <p>Finally, we selected a generic ultrasonic sensor for the project. Operating at 5 Volts and an
+                    angle of measure of 15 degrees, it would be more than sufficient for out small project. Given
+                    it's power requirements, it could also be safetly powered by the Arduino Mega's built in power
+                    pins.</p>
+                <p>Two sensors were intended to be used at the tip of the cane pointing out at 30 degrees and -30
+                    (330) degrees, for optimal coverage on either side to properly extend the range out that the
+                    user can detect.</p>
+                <h4>Testing, Testing, 1, 2, 3...</h4>
+                <figure>
+                    <img src="/blog/posts/img/cane_code.jpg"
+                        alt="Arduino IDE with code for ultrasonic sensors and it's results">
+                    <figcaption>Arduino IDE with code for ultrasonic sensors and it's results</figcaption>
+                </figure>
+                <p>After wiring everything rudimentarily to a breadboard, we tested all the equipment seperately.
+                </p>
+                <p>Using the Arduino IDE, I could plug the Arduino Mega into a computer with a USB cable, which also
+                    provided power, and load programs onto the Arduino directly. Using this method, I wrote up a few
+                    small scripts to test each piece of equipment invidually. The motors worked perfectly, wherein
+                    we could change the strength of each motor as well as control each motor seperatly, so deliver
+                    on our goal of vibratiing stronger based on distance to the detected obstacle.</p>
+                <figure>
+                    <img src="/blog/posts/img/cane_table_compressed.png" alt="Generic HC-SR04 Ultrasonic sensor">
+                </figure>
+                <p>We tested the sensors accuracy by measuring the accuracy of the sensors with differently shaped
+                    objects at different distances. We tested using a small cardboard box, a large shoebox, and a
+                    small metal trash can. </p>
+                <h4>Results and conclusion</h4>
+                <p>According to the testing, the sensors were always accurate within 5 cm, at a range between 0 cm
+                    and 200 cm. We knew a range of 200 cm (6.5 ft) would be the best maximum range of the sensor
+                    before the readings began to be inaccurate, so we set the range between 0 cm and 200 cm, as the
+                    minimum and maximum distances to read.</p>
+                <p>The largest issue with this project came from combining the equipment of the sensors and motors
+                    together. While all the equipment worked fine seperately, trying to mix things together would
+                    crash everything. We tested every sensor, motor and pin on the Arduino indidiaully, trying to
+                    diagnose the issue but ultimately could not figure out the cause for these errors.</p>
+                <p>We even presented our dilemeas during our bi-monthly meeting with Lockheed Martin engineers, who
+                    we were partnered with in our high school for our engineering program.</p>
+                <p>Every engineer we met with was equally as perplexed as we werer, but praised our diagnotic
+                    approach and our efforts into solving this problem (which after years of hindsight, I believe
+                    may have been a hardware defect on the Arduino board).</p>
+                <p>I still consider this a valuable experience in the lengths we went through and the goals we were
+                    actually able to accomplish, as well as the validation from working engineers at Lockheed Martin
+                    that our troubles were something they also faced daily.</p>
             </main>
             <!--Cards-->
         </section>
