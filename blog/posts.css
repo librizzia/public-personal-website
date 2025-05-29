@@ -82,3 +82,63 @@ justify-content: flex-end;
 footer {
     padding-bottom: 2rem;
 }
+
+
+/* Ensure card hover effect adapts to theme */
+[data-theme="light"] .card:hover {
+    transform: scale(1.01);
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  [data-theme="dark"] .card:hover {
+    transform: scale(1.01);
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Theme toggle button color */
+  html[data-theme="dark"] .theme-toggle {
+      color: #ffffff; /* White color for dark theme */
+  }
+  
+  html[data-theme="light"] .theme-toggle {
+      color: #000000; /* Black color for light theme */
+  }
+  
+  /* Footer alignment fix */
+  footer {
+    padding-bottom: 1.5rem;
+    display: flex;
+    align-items: center; /* Vertically center both elements */
+    justify-content: space-between; /* Space them apart */
+  }
+  
+  #made-by {
+    margin: 0; /* Remove any default margins */
+    line-height: 1; /* Consistent line height */
+  }
+  
+  .theme-switcher {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0; /* Remove any padding */
+    height: auto; /* Let it size to content */
+    line-height: 1; /* Match the button's line height */
+  }
+  
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin: 0; /* Ensure no margins on the button */
+  }
+  
+  .theme-toggle:focus {
+    outline: none;
+  }
