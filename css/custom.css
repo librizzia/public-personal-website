@@ -67,6 +67,10 @@
   .card {
     position: relative;
     transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
   }
 
   .card:hover{
@@ -74,9 +78,17 @@
     transition: 0.3s;
   }
 
-.project-technologies{
-  /* order: 10; */
-  color: var(--muted-color)
+.project-name {
+    min-height: 2rem; /* Ensure consistent height for titles */
+}
+
+.project-description {
+    min-height: 5rem; /* Ensure consistent height for descriptions */
+}
+
+.project-technologies {
+    min-height: 2rem; /* Ensure consistent height for technologies */
+    color: var(--muted-color)
 }
 
 
@@ -110,3 +122,7 @@
     float: right;
     justify-content: flex-end;
   }
+
+#personal-website {
+  margin-top: 19px;
+}
