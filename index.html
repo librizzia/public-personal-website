@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="I'm Anthony Librizzi. I'm looking for opportunities in software engineering and front end web development.">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="icon" type="image/x-icon" href="/img/favicon_dark.svg">
     <!-- Custom styles for project page -->
     <link rel="stylesheet" href="/css/custom.css">
@@ -36,10 +36,16 @@
 
         <!-- Hero -->
         <section id="hero">
-            <h1>Hi, I'm Anthony Librizzi</h1>
-            <p>Welcome to my website. I'm seeking opportunities to bring your ideas to <strong>life<strong>. </p>
-            <p>I'm interested in front end web development, with a focus on creating intereative and well presented
-                expereinces for clients. But I'm open for whatever opportunity may come my way.</p>
+            <div class="grid">
+                <div class="greeter">
+                    <h1>Hi, I'm Anthony Librizzi</h1>
+                    <p>Welcome to my website. I'm seeking opportunities to bring your ideas to <strong>life</strong>. </p>
+                    <p>Bringing ideas to life with interactive, well-crafted web experiences—always open to new challenges!</p>
+                </div>
+                <div id="avatar-container">
+                    <img src="./img/export_portrait_v2.svg" alt="Avatar Icon">
+                </div>
+            </div>
 
             <h3>Skills</h3>
             <div class="grid">
@@ -56,6 +62,100 @@
         </section>
         <!-- Hero -->
 
+        <!-- Project Showcase Test-->
+        <section id="projects-test">
+            <hgroup>
+                <h2>Projects</h2>
+                <h3>A selection of projects I've worked on</h3>
+            </hgroup>
+            <!-- Projects -->
+             <!-- Greentree Docs -->
+            <div class="project-container">
+                <div class="project-left">
+                  <div class="project-details">
+                    <h2 class="project-name">Greentree Docs</h2>
+                    <p class="project-description"> Knowledge Base website for Greentree Church's Media Ministry, used by its volunteers and staff.</p>
+                    <p class="project-technologies">Built in React. Built from Docusaurus.</a>
+                    <div id="project-link-buttons">
+                        <a href="https://github.com/librizzia/greentree-docs" role="button" class="secondary">Code</a>
+                        <a href="https://greentree-docs.netlify.app/" role="button" class="contrast">Live Demo</a>
+                    </div>
+                  </div>
+                  <div class="project-image">
+                    <img src="./img/project-images/greentree-docs-dark-v2.webp" alt="Project Image">
+                  </div>
+                </div>
+            </div>
+            <!-- React Budget App -->
+            <div class="project-container">
+                <div class="project-right">
+                    <div class="project-details">
+                    <h2 class="project-name">React Budget App</h2>
+                    <p class="project-description">CRUD web application for budgeting, viewing, and managing expenses.</p>
+                    <p class="project-technologies">Built in React. Front end in React Bootstrap.</a>
+                    <div id="project-link-buttons">
+                        <a href="https://github.com/librizzia/react-budget-app" role="button" class="secondary">Code</a>
+                        <a href="https://al-react-budget-app.netlify.app/" role="button" class="contrast">Live Demo</a>
+                    </div>
+                    </div>
+                    <div class="project-image">
+                    <img src="./img/project-images/react-budget-app.webp" alt="Project Image">
+                    </div>
+                </div>
+            </div>
+            <!-- Angular To Do List -->
+            <div class="project-container">
+                <div class="project-left">
+                    <div class="project-details">
+                    <h2 class="project-name">Angular To Do List</h2>
+                    <p class="project-description">CRUD web application to create, mark complete, and remove tasks on a to do list.</p>
+                    <p class="project-technologies">Built with Angular. Written in Typescript.</a>
+                    <div id="project-link-buttons">
+                        <a href="https://github.com/librizzia/angular-todo" role="button" class="secondary">Code</a>
+                        <a href="https://al-angular-todo.netlify.app/" role="button" class="contrast">Live Demo</a>
+                    </div>
+                    </div>
+                    <div class="project-image">
+                    <img src="./img/project-images/angular-to-do.webp" alt="Project Image">
+                    </div>
+                </div>
+            </div>
+            <!-- Greentree Church Video System -->
+            <div class="project-container">
+                <div class="project-right">
+                    <div class="project-details">
+                    <h2 class="project-name">Greentree Church Video System</h2>
+                    <p class="project-description">How I designed and implemented a full video system for my local church</p>
+                    <div id="project-link-buttons">
+                        <a href="https://www.youtube.com/@greentreechurch1332/streams" role="button" class="secondary">Result</a>
+                        <a href="blog/posts/greentree-video-system.html" role="button" class="contrast">Blog Post</a>
+                    </div>
+                    </div>
+                    <div class="project-image">
+                    <img src="./img/project-images/projection_overview.webp" alt="Project Image">
+                    </div>
+                </div>
+            </div>
+            <!-- Coffee Shop -->
+            <div class="project-container">
+                <div class="project-left">
+                    <div class="project-details">
+                    <h2 class="project-name">Coffee Shop Web Design</h2>
+                    <p class="project-description">Designed landing page, reviews page, and menu page for a local coffee shop.</p>
+                    <p class="project-technologies">Designed in Figma.</a>
+                    <div id="project-link-buttons">
+                        <a href="https://www.figma.com/proto/wJSEtaVqG9HT2ByAOb1IwC/Caffeine-Corner?node-id=0-1&t=wLcqkZrIIXkBgDZS-1/" role="button" class="contrast">Live Demo</a>
+                    </div>
+                    </div>
+                    <div class="project-image">
+                    <img src="./img/project-images/coffee-corner.webp" alt="Project Image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Project Showcase Test End -->
+
         <!-- Projects -->
         <section id="projects">
             <hgroup>
@@ -63,6 +163,48 @@
                 <h3>A selection of projects I've worked on</h3>
             </hgroup>
             <!--Project Cards-->
+            <div class="grid">
+                <!-- Greentree Docs -->
+                <article class="card">
+                    <figure>
+                        <img src="./img/project-images/greentree-docs-dark-v2.webp" alt="Greentree Docs Preview" style="width:100%">
+                    </figure>
+                    <h2 class="project-name">Greentree Docs</h2>
+                    <p class="project-description"> Knowledge Base website for Greentree Church's Media Ministry, used by its volunteers and staff.</p>
+                    <p class="project-technologies">Built with React. Built from Docusaurus.</a>
+                    <div id="project-link-buttons">
+                        <a href="https://greentree-docs.netlify.app/" role="button" class="contrast">Live Demo</a>
+                        <a href="https://github.com/librizzia/greentree-docs" role="button" class="secondary">Code</a>
+                    </div>
+                </article>
+                <!-- React Budget App -->
+                <article class="card">
+                    <figure>
+                        <img src="./img/project-images/react-budget-app.webp" alt="Avatar" style="width:100%">
+                    </figure>
+                    <h2 class="project-name">React Budget App</h2>
+                    <p class="project-description">CRUD web application for budgeting, viewing, and managing expenses.</p>
+                    <p class="project-technologies">Built with React. Written for Bootstrap.</a>
+                        <div id="project-link-buttons">
+                            <a href="https://al-react-budget-app.netlify.app/" role="button" class="contrast">Live Demo</a>
+                            <a href="https://github.com/librizzia/react-budget-app" role="button" class="secondary">Code</a>
+                        </div>
+                </article>
+                <!-- Angular To Do -->
+                <article class="card">
+                    <figure>
+                        <img src="./img/project-images/angular-to-do.webp" alt="Avatar" style="width:100%">
+                    </figure>
+                    <h2 class="project-name">Angular To Do List</h2>
+                    <p class="project-description">CRUD web application to create, mark complete, and remove tasks on a to do list.</p>
+                    <p class="project-technologies">Built with Angular. Written in Typescript.</a>
+                    <div id="project-link-buttons">
+                        <a href="https://al-angular-todo.netlify.app/" role="button" class="contrast">Live Demo</a>
+                        <a href="https://github.com/librizzia/angular-todo" role="button" class="secondary">Code</a>
+                    </div>
+                </article>
+            </div>
+
             <article>
                 <div>
                     <hgroup>
@@ -103,7 +245,7 @@
                 </div>
             </article>
 
-            <article class="grid">
+            <article>
                 <div>
                     <hgroup>
                         <h3>Greentree Church Video System</h3>
@@ -123,14 +265,14 @@
                         </p>
                     </hgroup>
                     <!-- <a href="https://github.com/librizzia/angular-todo" role="button" class="secondary">Code</a> -->
-                    <a href="https://www.figma.com/file/wJSEtaVqG9HT2ByAOb1IwC/Caffeine-Corner" role="button"
+                    <a href="https://www.figma.com/file/wJSEtaVqG9HT2ByAOb1IwC/Caffeine-Corner" target="_blank" rel="noopener noreferrer" role="button"
                         class="contrast">Live Demo</a>
                 </div>
             </article>
 
             <!--Project Cards-->
         </section>
-        <!-- Projects -->
+        <!-- Projects End -->
 
         <!-- Footer -->
         <hr>

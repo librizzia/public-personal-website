@@ -6,6 +6,27 @@
     min-height: calc(100vh - 7rem);
     padding: 1rem 0;
   } */
+   :root{
+    --pico-background-color: #fff;
+    --pico-color: #373c44;
+    --pico-text-selection-color: rgba(2, 154, 232, .25);
+    --pico-muted-color: #646b79;
+    --pico-muted-border-color: #e7eaf0;
+    --pico-primary: #0172ad;
+    --pico-primary-background: #0172ad;
+    --pico-primary-border: var(--pico-primary-background);
+    --pico-primary-underline: rgba(1, 114, 173, .5);
+    --pico-primary-hover: #015887;
+    --pico-primary-hover-background: #02659a;
+    --pico-primary-hover-border: var(--pico-primary-hover-background);
+    --pico-primary-hover-underline: var(--pico-primary-hover);
+    --pico-primary-focus: rgba(2, 154, 232, .5);
+    --pico-primary-inverse: #fff;
+    --pico-secondary: #5d6b89;
+    --pico-secondary-background: #525f7a;
+    --main-color: #c2c7d0;
+    --muted-color: #7b8495;
+   }
 
   /* Hero Image */
   article div:nth-of-type(2) {
@@ -16,7 +37,137 @@
     background-size: cover;
     padding: 0;
   }
+
+  #hero{
+    /* justify-items: center;
+    align-content: center; */
+    height: 60svh;
+    text-align: center;
+  }
+
+  .greeter{
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  #avatar-container {
+    display: flex;         /* Enable flexbox */
+    justify-content: center; /* Horizontally center the content */
+    align-items: center;   /* Vertically center the content */
+}
+#avatar-container img {
+  width: 50%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  #avatar-container img {
+      width: 80%;  /* Adjust size for smaller screens */
+  }
+}
+
+
+  #avatar-container img {
+    filter: brightness(0) saturate(100%) invert(91%) sepia(14%) saturate(73%) hue-rotate(182deg) brightness(103%) contrast(90%);
+}
+
+
+  .card {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+  }
+
+  .card:hover{
+    transform: scale(1.01);
+    transition: 0.3s;
+  }
+
+  .project-container {
+    --main-color: #c2c7d0;
+    --muted-color: #7b8495;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    flex-direction: column;
+}
+
+.project-left,
+.project-right {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.project-technologies{
+  /* order: 10; */
+  color: var(--muted-color)
+}
+
+.project-details {
+    order: 0;
+    width: 100%;
+}
+
+.project-image {
+    order: 1;
+    padding: 0%;
+    width: 100%;
+    max-width: 100%;
+    /* max-width: 300px; */
+    /* max-height: 300px; */
+}
+
+.project-image img {
+    width: 100%; /* Ensure the image fills its container horizontally */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover; /* Resize the image to cover its container while preserving aspect ratio */
+    overflow: hidden; /* Hide any overflow from the image */
+}
+
+/* For desktop view, where project-left and project-right are side by side */
+@media (min-width: 768px) {
+    .project-container {
+      height: 300px;
+        flex-direction: row;
+    }
+
+    .project-left .project-details {
+        order: 1;
+    }
+
+    .project-left .project-image {
+        order: 2;
+    }
+
+    .project-right .project-details {
+        order: 2;
+        margin-left: 20px; /* Add left margin to project-details */
+    }
+
+    .project-right .project-image {
+        order: 1;
+    }
+
+    .project-left,
+    .project-right {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+
+    .project-details {
+      width: 70%;
+  }
   
+    .project-image {
+        padding: 0%;
+        width: 30%;
+        max-width: 300px;
+        /* max-height: 300px; */
+    }
+}
+
   @media (min-width: 992px) {
     .grid > div:nth-of-type(2) {
       display: block;
