@@ -49,3 +49,21 @@
     float: right;
     justify-content: flex-end;
   }
+
+  /* Adjust section with blog id for better readability */
+#blog {
+    max-width: 800px; /* Limit the width for better readability */
+    margin: 0 auto; /* Center the content */
+    line-height: 1.6; /* Improve text spacing */
+    padding: 1rem; /* Add padding for better spacing */
+}
+
+/* Make blog description text smaller */
+#blog-description {
+  padding-top: .4rem;
+  font-size: .9rem;
+}
+
+#blog-title{
+  font-size: 30px;
+}

@@ -1,0 +1,84 @@
+figure {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: var(--pico-muted-color);
+    margin-top: 0.5rem;
+}
+
+hgroup {
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    color: var(--pico-muted-color);
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+hr {
+    margin: 2rem 0;
+}
+
+
+#blog {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    padding: 1rem;
+}
+
+#blog-description {
+  padding-top: .4rem;
+  font-size: .9rem;
+}
+
+#blog-title{
+  font-size: 1.5rem;
+}
+
+/* Footer */
+
+#light{
+text-decoration: none;
+background-color:transparent
+}
+
+#dark{
+text-decoration: none;
+background-color:transparent
+}
+
+#made-by{
+/* width: 60%; */
+float: left;
+}
+
+.theme-switcher{
+font-size: .9rem;
+/* width: 40%; */
+float: right;
+justify-content: flex-end;
+}
+
+footer {
+    padding-bottom: 2rem;
+}
