@@ -6,7 +6,7 @@
     min-height: calc(100vh - 7rem);
     padding: 1rem 0;
   } */
-   :root{
+  :root{
     --pico-background-color: #fff;
     --pico-color: #373c44;
     --pico-text-selection-color: rgba(2, 154, 232, .25);
@@ -29,14 +29,6 @@
    }
 
   /* Hero Image */
-  article div:nth-of-type(2) {
-    display: none;
-    background-color: #374956;
-    background-image: url("/img/greentree_congregation.jpg");
-    background-position: center;
-    background-size: cover;
-    padding: 0;
-  }
 
   #hero{
     /* justify-items: center;
@@ -82,91 +74,12 @@
     transition: 0.3s;
   }
 
-  .project-container {
-    --main-color: #c2c7d0;
-    --muted-color: #7b8495;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    flex-direction: column;
-}
-
-.project-left,
-.project-right {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-
 .project-technologies{
   /* order: 10; */
   color: var(--muted-color)
 }
 
-.project-details {
-    order: 0;
-    width: 100%;
-}
 
-.project-image {
-    order: 1;
-    padding: 0%;
-    width: 100%;
-    max-width: 100%;
-    /* max-width: 300px; */
-    /* max-height: 300px; */
-}
-
-.project-image img {
-    width: 100%; /* Ensure the image fills its container horizontally */
-    height: auto; /* Maintain the aspect ratio */
-    object-fit: cover; /* Resize the image to cover its container while preserving aspect ratio */
-    overflow: hidden; /* Hide any overflow from the image */
-}
-
-/* For desktop view, where project-left and project-right are side by side */
-@media (min-width: 768px) {
-    .project-container {
-      height: 300px;
-        flex-direction: row;
-    }
-
-    .project-left .project-details {
-        order: 1;
-    }
-
-    .project-left .project-image {
-        order: 2;
-    }
-
-    .project-right .project-details {
-        order: 2;
-        margin-left: 20px; /* Add left margin to project-details */
-    }
-
-    .project-right .project-image {
-        order: 1;
-    }
-
-    .project-left,
-    .project-right {
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-    }
-
-    .project-details {
-      width: 70%;
-  }
-  
-    .project-image {
-        padding: 0%;
-        width: 30%;
-        max-width: 300px;
-        /* max-height: 300px; */
-    }
-}
 
   @media (min-width: 992px) {
     .grid > div:nth-of-type(2) {
@@ -175,9 +88,6 @@
   }
   
   /* Footer */
-  body > footer {
-    padding: 1rem 0;
-  }
 
   #light{
     text-decoration: none;
