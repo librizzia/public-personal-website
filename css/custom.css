@@ -31,32 +31,71 @@
   /* Hero Image */
 
   #hero{
-    /* justify-items: center;
-    align-content: center; */
-    height: 60svh;
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    width: auto;
+    height: 40svh;
     text-align: center;
   }
 
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+  }
+
   .greeter{
+    grid-column: 1 / span 2;
     margin-top: auto;
     margin-bottom: auto;
   }
 
   #avatar-container {
-    display: flex;         /* Enable flexbox */
-    justify-content: center; /* Horizontally center the content */
-    align-items: center;   /* Vertically center the content */
+    grid-column: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #avatar-container img {
-  width: 50%;
+  width: 80%;
   height: auto;
 }
 
+/* Mobile Phone Screens */
 @media (max-width: 768px) {
+  .grid{
+    display: flex;
+    flex-direction: column;
+  }
+
+    .greeter {
+      order: 2;
+  }
+
+  #avatar-container {
+      order: 1;
+  }
+  
+  #greeter-name {
+      font-size: 1.5rem;
+  }
+
+  #hero{
+    /* justify-items: center;
+    align-content: center; */
+    height: 65svh;
+    text-align: center;
+  }
+
   #avatar-container img {
-      width: 80%;  /* Adjust size for smaller screens */
+      width: 80%;
   }
 }
+  
 
 
   #avatar-container img {
@@ -79,15 +118,15 @@
   }
 
 .project-name {
-    min-height: 2rem; /* Ensure consistent height for titles */
+    min-height: 2rem;
 }
 
 .project-description {
-    min-height: 5rem; /* Ensure consistent height for descriptions */
+    min-height: 5rem;
 }
 
 .project-technologies {
-    min-height: 2rem; /* Ensure consistent height for technologies */
+    min-height: 2rem;
     color: var(--muted-color)
 }
 
@@ -182,22 +221,22 @@ html[data-theme="light"] .theme-toggle {
 footer {
   padding-bottom: 1.5rem;
   display: flex;
-  align-items: center; /* Vertically center both elements */
-  justify-content: space-between; /* Space them apart */
+  align-items: center;
+  justify-content: space-between;
 }
 
 #made-by {
-  margin: 0; /* Remove any default margins */
-  line-height: 1; /* Consistent line height */
+  margin: 0;
+  line-height: 1;
 }
 
 .theme-switcher {
   display: flex;
   align-items: center;
   margin: 0;
-  padding: 0; /* Remove any padding */
-  height: auto; /* Let it size to content */
-  line-height: 1; /* Match the button's line height */
+  padding: 0;
+  height: auto;
+  line-height: 1;
 }
 
 .theme-toggle {
@@ -210,7 +249,7 @@ footer {
   display: flex;
   align-items: center;
   line-height: 1;
-  margin: 0; /* Ensure no margins on the button */
+  margin: 0;
 }
 
 .theme-toggle:focus {
