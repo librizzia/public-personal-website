@@ -65,6 +65,52 @@
   height: auto;
 }
 
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  }
+
+/* Skills Card Styling */
+.skills-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem; /* Equivalent to Tailwind's gap-3 */
+  border-radius: 0.5rem; /* Equivalent to Tailwind's rounded-lg */
+  border-width: 1px;
+  padding: 0.75rem 0.5rem; /* Equivalent to Tailwind's px-2 py-3 */
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-2xs */
+  outline-offset: 2px;
+  transition-property: color, background-color;
+  transition-duration: 0.2s;
+  min-height: 7rem;
+  min-width: 2rem; /* Adjusted height to make the cards taller */
+  /* max-width: 10rem; */
+  border: 2px solid var(--pico-muted-color);
+}
+
+/* Skill Title */
+.skills-card span{
+  font-size: medium;
+}
+
+.skills-card:hover i {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.skills-card i {
+  font-size: 2.5rem; /* Adjusted icon size */
+  transition: transform 0.3s ease-in-out;
+}
+
 /* Mobile Phone Screens */
 @media (max-width: 768px) {
   .grid{
@@ -93,6 +139,30 @@
 
   #avatar-container img {
       width: 80%;
+  }
+
+  .skill-grid {
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    }
+
+  .skills-card {
+    min-height: 4rem; /* Adjusted height for mobile */
+    min-width: 4rem; /* Adjusted width for mobile */
+    padding: none; /* Reduced padding for mobile */
+  }
+
+  .skills-card i {
+    font-size: 2rem; /* Adjusted icon size for mobile */
+    width: 2.5rem; /* Adjusted width for mobile */
+    height: 2.5rem; /* Adjusted height for mobile */
+  }
+
+  /* Hide skill titles (span) on mobile screen sizes */
+  .skills-card span {
+    display: none;
   }
 }
   
