@@ -7,48 +7,46 @@
     padding: 1rem 0;
   } */
 
-  /* Hero Image */
-  article div:nth-of-type(2) {
+/* Hero Image */
+article div:nth-of-type(2) {
     display: none;
     background-color: #374956;
     background-image: url("/img/greentree_congregation.jpg");
     background-position: center;
     background-size: cover;
     padding: 0;
-  }
-  
-  @media (min-width: 992px) {
+}
+
+@media (min-width: 992px) {
     .grid > div:nth-of-type(2) {
-      display: block;
+        display: block;
     }
-  }
-  
-  /* Footer */
-  body > footer {
+}
+
+/* Footer */
+body > footer {
     padding: 1rem 0;
-  }
+}
 
-  #light{
+#light {
     text-decoration: none;
-    background-color:transparent
-  }
+    background-color: transparent;
+}
 
-  #dark{
+#dark {
     text-decoration: none;
-    background-color:transparent
-  }
+    background-color: transparent;
+}
 
-  #made-by{
-    /* width: 60%; */
+#made-by {
     float: left;
-  }
+}
 
-  .theme-switcher{
-    font-size: .9rem;
-    /* width: 40%; */
+.theme-switcher {
+    font-size: 0.9rem;
     float: right;
     justify-content: flex-end;
-  }
+}
 
 .article-footer .time-to-read {
     float: right;
@@ -63,99 +61,100 @@
     padding: 1rem;
 }
 
-
 #blog-description {
-  padding-top: .4rem;
-  font-size: .9rem;
+    padding-top: 0.4rem;
+    font-size: 0.9rem;
 }
 
-#blog-title{
-  font-size: 30px;
+#blog-title {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
 }
 
 #blog-section-description {
-  padding-top: .5rem;
-  font-size: .9rem;
+    padding-top: 0.5rem;
+    font-size: 0.9rem;
 }
 
 /* Ensure card hover effect adapts to theme */
 [data-theme="light"] .card:hover {
-  transform: scale(1.01);
-  background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.01);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme="dark"] .card:hover {
-  transform: scale(1.01);
-  background-color: rgba(0, 0, 0, 0.1);
+    transform: scale(1.01);
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Theme toggle button color */
 html[data-theme="dark"] .theme-toggle {
-    color: #ffffff; /* White color for dark theme */
+    color: #ffffff;
 }
 
 html[data-theme="light"] .theme-toggle {
-    color: #000000; /* Black color for light theme */
+    color: #000000;
 }
 
 /* Footer alignment fix */
 footer {
-  align-items: center; /* Vertically center both elements */
-  justify-content: space-between; /* Space them apart */
+    padding-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 #made-by {
-  margin: 0; /* Remove any default margins */
-  line-height: 1; /* Consistent line height */
+    margin: 0;
+    line-height: 1;
 }
 
 .theme-switcher {
-  display: flex;
-  align-items: center;
-  margin: 0;
-  padding: 0; /* Remove any padding */
-  height: auto; /* Let it size to content */
-  line-height: 1; /* Match the button's line height */
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    line-height: 1;
 }
 
 .theme-toggle {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  color: inherit;
-  display: flex;
-  align-items: center;
-  line-height: 1;
-  margin: 0; /* Ensure no margins on the button */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin: 0;
 }
 
 .theme-toggle:focus {
-  outline: none;
+    outline: none;
 }
-
 
 /* Animations */
 @keyframes fadeIn {
-  from {
-      opacity: 0;
-      visibility: hidden;
-  }
-  to {
-      opacity: 1;
-      visibility: visible;
-  }
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
 }
 
 main > section {
-  opacity: 0;
-  visibility: hidden;
-  animation: fadeIn 0.5s ease-in-out forwards;
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 0.5s ease-in-out forwards;
 }
 
 nav, footer {
-  opacity: 1;
-  visibility: visible;
-  animation: none;
+    opacity: 1;
+    visibility: visible;
+    animation: none;
 }
