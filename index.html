@@ -7,14 +7,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
         content="I'm Anthony Librizzi. I'm looking for opportunities in software engineering and front end web development.">
-    <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
     <link rel="icon" type="image/x-icon" href="/img/favicon_dark.svg">
     <!-- Custom styles for project page -->
     <link rel="stylesheet" href="/css/custom.css">
+    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/theme-toggles@4.10.1/css/classic.css" integrity="sha256-ndV7WkIVakM8bPhJyUDannYz9SYLALlrCgI7xICkkzM=" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
         integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="/scripts/theme-switcher.js" defer></script>
+    <script src="/scripts/skills.js" defer></script>
     <script defer data-domain="anthonylibrizzi.com" src="https://plausible.io/js/plausible.js"></script>
     <title>Anthony Librizzi</title>
 </head>
@@ -36,25 +39,58 @@
 
         <!-- Hero -->
         <section id="hero">
-            <h1>Hi, I'm Anthony Librizzi</h1>
-            <p>Welcome to my website. I'm seeking opportunities to bring your ideas to <strong>life<strong>. </p>
-            <p>I'm interested in front end web development, with a focus on creating intereative and well presented
-                expereinces for clients. But I'm open for whatever opportunity may come my way.</p>
-
-            <h3>Skills</h3>
             <div class="grid">
-                <div class="div1">HTML</div>
-                <div class="div2">CSS</div>
-                <div class="div3">Javascript</div>
-                <div class="div4">Typescript</div>
-                <div class="div5">React</div>
-                <div class="div6">Python</div>
-                <div class="div7">Git</div>
-                <div class="div8">Angular</div>
-                <div class="div9">SQL</div>
+                <div class="greeter">
+                    <h1 id="greeter-name">Hi, I'm Anthony Librizzi</h1>
+                    <p>Welcome to my website. I'm seeking opportunities to bring your ideas to <strong>life</strong>. </p>
+                    <p>Bringing ideas to life with interactive, well-crafted web experiences—always open to new challenges!</p>
+                </div>
+                <div id="avatar-container">
+                    <img src="./img/export_portrait_v2.svg" alt="Avatar Icon">
+                </div>
             </div>
         </section>
         <!-- Hero -->
+        
+        <!-- Skills -->
+        <section id="skills">
+            <h3>Skills</h3>
+            <div class="skill-grid">
+                <div class="skills-card">
+                    <i class="devicon-html5-plain plain"></i>
+                    <span>HTML</span>
+                </div>
+                <div class="skills-card">
+                    <i class="devicon-css3-plain plain"></i>
+                    <span>CSS</span>
+                </div>
+                <div class="skills-card">
+                    <i class="devicon-javascript-plain plain"></i>
+                    <span>Javascript</span>
+                </div>
+                <div class="skills-card">
+                    <i class="devicon-typescript-plain plain"></i>
+                    <span>Typescript</span>
+                </div>
+                <div class="skills-card">
+                    <i class="devicon-react-original plain"></i>
+                    <span>React</span>
+                </div>
+                <div class="skills-card">
+                    <i class="devicon-python-plain plain"></i>
+                    <span>Python</span>
+                </div>
+                <div class="skills-card">
+                    <i class="devicon-tailwindcss-original plain"></i>
+                    <span>Tailwind</span>
+                </div>
+                <div class="skills-card">
+                    <i class="devicon-angularjs-plain plain"></i>
+                    <span>Angular</span>
+                </div>
+            </div>
+        </section>
+        <!-- Skills -->
 
         <!-- Projects -->
         <section id="projects">
@@ -63,7 +99,49 @@
                 <h3>A selection of projects I've worked on</h3>
             </hgroup>
             <!--Project Cards-->
-            <article>
+            <div class="grid">
+                <!-- Greentree Docs -->
+                <article class="card">
+                    <figure>
+                        <img src="./img/project-images/greentree-docs-dark-v2.webp" alt="Greentree Docs Preview" style="width:100%">
+                    </figure>
+                    <h2 class="project-name">Greentree Docs</h2>
+                    <p class="project-description"> Knowledge Base website for Greentree Church's Media Ministry, used by its volunteers and staff.</p>
+                    <p class="project-technologies">Built with React. Built from Docusaurus.</a>
+                    <div id="project-link-buttons">
+                        <a href="https://greentree-docs.netlify.app/" role="button" class="contrast" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        <a href="https://github.com/librizzia/greentree-docs" role="button" class="secondary" target="_blank" rel="noopener noreferrer">Code</a>
+                    </div>
+                </article>
+                <!-- React Budget App -->
+                <article class="card">
+                    <figure>
+                        <img src="./img/project-images/react-budget-app.webp" alt="Avatar" style="width:100%">
+                    </figure>
+                    <h2 class="project-name">React Budget App</h2>
+                    <p class="project-description">CRUD web application for budgeting, viewing, and managing expenses.</p>
+                    <p class="project-technologies">Built with React. Written for Bootstrap.</a>
+                        <div id="project-link-buttons">
+                            <a href="https://al-react-budget-app.netlify.app/" role="button" class="contrast" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                            <a href="https://github.com/librizzia/react-budget-app" role="button" class="secondary" target="_blank" rel="noopener noreferrer">Code</a>
+                        </div>
+                </article>
+                <!-- Angular To Do -->
+                <article class="card">
+                    <figure>
+                        <img src="./img/project-images/angular-to-do.webp" alt="Avatar" style="width:100%">
+                    </figure>
+                    <h2 class="project-name">Angular To Do List</h2>
+                    <p class="project-description">CRUD web application to create, mark complete, and remove tasks on a to do list.</p>
+                    <p class="project-technologies">Built with Angular. Written in Typescript.</a>
+                    <div id="project-link-buttons">
+                        <a href="https://al-angular-todo.netlify.app/" role="button" class="contrast" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                        <a href="https://github.com/librizzia/angular-todo" role="button" class="secondary" target="_blank" rel="noopener noreferrer">Code</a>
+                    </div>
+                </article>
+            </div>
+
+            <article id="personal-website">
                 <div>
                     <hgroup>
                         <h3>Personal Website</h3>
@@ -71,48 +149,32 @@
                         <p>Made with HTML, CSS and Javascript. Front end in <a href="https://picocss.com/">Pico.css.</a>
                         </p>
                     </hgroup>
-                    <a href="https://github.com/librizzia/public-personal-website" role="button"
-                        class="secondary">Code</a>
-                    <a href="https://anthonylibrizzi.com/" role="button" class="contrast">Live Demo</a>
+                    <a href="https://anthonylibrizzi.com/" role="button" class="contrast" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    <a href="https://github.com/librizzia/public-personal-website" role="button" class="secondary" target="_blank" rel="noopener noreferrer">Code</a>
                 </div>
             </article>
-
+            
             <article>
                 <div>
                     <hgroup>
-                        <h3>React Budget App</h3>
-                        <p>CRUD web application for budgeting, viewing, and managing expenses.</p>
-                        <p>Built in React. Front end in React Bootstrap.</a>
-                        </p>
+                        <h3>Greentree Parent Code</h3>
+                        <p>Website for children ministry volunteers to display parent codes for child pickup</p>
+                        <p>Made with HTML, CSS and Javascript. Front end in <a href="https://picocss.com/">Pico.css.</a></p>
                     </hgroup>
-                    <a href="https://github.com/librizzia/react-budget-app" role="button" class="secondary">Code</a>
-                    <a href="https://al-react-budget-app.netlify.app/" role="button" class="contrast">Live Demo</a>
+                    <a href="https://github.com/librizzia/greentree-parent-code/" role="button" class="contrast" target="_blank" rel="noopener noreferrer">Code</a>
                 </div>
             </article>
-
             <article>
-                <div>
-                    <hgroup>
-                        <h3>Angular To Do List</h3>
-                        <p>CRUD web application to create, mark complete, and remove tasks on a to do list.</p>
-                        <p>Built with Angular. Written in Typescript</a>
-                        </p>
-                    </hgroup>
-                    <a href="https://github.com/librizzia/angular-todo" role="button" class="secondary">Code</a>
-                    <a href="https://al-angular-todo.netlify.app/" role="button" class="contrast">Live Demo</a>
-                </div>
-            </article>
-
-            <article class="grid">
                 <div>
                     <hgroup>
                         <h3>Greentree Church Video System</h3>
                         <p>How I designed and implemented a full video system for my local church </p>
                     </hgroup>
-                    <a href="#" role="button" class="secondary">Details</a>
                     <a href="blog/posts/greentree-video-system.html" role="button" class="contrast">Blog Post</a>
+                    <!-- <a href="#" role="button" class="secondary">Details</a> -->
                 </div>
             </article>
+            
 
             <article>
                 <div>
@@ -122,25 +184,40 @@
                         <p>Designed in Figma</a>
                         </p>
                     </hgroup>
-                    <!-- <a href="https://github.com/librizzia/angular-todo" role="button" class="secondary">Code</a> -->
-                    <a href="https://www.figma.com/file/wJSEtaVqG9HT2ByAOb1IwC/Caffeine-Corner" role="button"
+                    <a href="https://www.figma.com/file/wJSEtaVqG9HT2ByAOb1IwC/Caffeine-Corner" target="_blank" rel="noopener noreferrer" role="button"
                         class="contrast">Live Demo</a>
                 </div>
             </article>
 
             <!--Project Cards-->
         </section>
-        <!-- Projects -->
+        <!-- Projects End -->
 
         <!-- Footer -->
         <hr>
         <footer>
             <small id="made-by">Made with &#128149; by Anthony Librizzi</small>
             <div class="theme-switcher">
-                Change Theme:
-                <a href="#" data-theme-switcher="light" id="light">Light</a>
-                ·
-                <a href="#" data-theme-switcher="dark" id="dark">Dark</a>
+                <button class="theme-toggle" type="button" title="Toggle theme" aria-label="Toggle theme">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" width="1em" height="1em" fill="currentColor" stroke-linecap="round" class="theme-toggle__classic" viewBox="0 0 32 32">
+                        <clipPath id="theme-toggle__classic__cutout">
+                            <path d="M0-5h30a1 1 0 0 0 9 13v24H0Z" />
+                        </clipPath>
+                        <g clip-path="url(#theme-toggle__classic__cutout)">
+                            <circle cx="16" cy="16" r="9.34" />
+                            <g stroke="currentColor" stroke-width="1.5">
+                                <path d="M16 5.5v-4" />
+                                <path d="M16 30.5v-4" />
+                                <path d="M1.5 16h4" />
+                                <path d="M26.5 16h4" />
+                                <path d="m23.4 8.6 2.8-2.8" />
+                                <path d="m5.7 26.3 2.9-2.9" />
+                                <path d="m5.8 5.8 2.8 2.8" />
+                                <path d="m23.4 23.4 2.9 2.9" />
+                            </g>
+                        </g>
+                    </svg>
+                </button>
             </div>
         </footer>
         <!-- Footer -->

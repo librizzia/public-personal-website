@@ -1,37 +1,35 @@
-/*!
- * Minimal theme switcher
- *
- * Pico.css - https://picocss.com
- * Copyright 2020 - Licensed under MIT
- */
-
-const themeSwitcher = {
-  // Config
-  buttonsTarget: "a[data-theme-switcher]",
-  buttonAttribute: "data-theme-switcher",
-  rootAttribute: "data-theme",
-
-  // Init
-  init() {
-    document.querySelectorAll(this.buttonsTarget).forEach(
-      function (button) {
-        button.addEventListener(
-          "click",
-          function (event) {
-            event.preventDefault();
-            document
-              .querySelector("html")
-              .setAttribute(
-                this.rootAttribute,
-                event.target.getAttribute(this.buttonAttribute)
-              );
-          }.bind(this),
-          false
-        );
-      }.bind(this)
-    );
-  },
-};
-
-// Init
-themeSwitcher.init();
+// Simple theme switcher for theme-toggles classic toggle
+document.addEventListener('DOMContentLoaded', function() {
+  const themeToggle = document.querySelector('.theme-toggle');
+  const html = document.documentElement;
+  
+  // Check for saved theme preference or default to 'light'
+  const currentTheme = localStorage.getItem('theme') || 'light';
+  
+  // Apply the saved theme
+  html.setAttribute('data-theme', currentTheme);
+  
+  // Update toggle state based on current theme
+  if (currentTheme === 'dark') {
+      themeToggle.classList.add('theme-toggle--toggled');
+  } else {
+      themeToggle.classList.remove('theme-toggle--toggled');
+  }
+  
+  // Add click event listener
+  themeToggle.addEventListener('click', function() {
+      // Get current theme
+      const currentTheme = html.getAttribute('data-theme');
+      
+      // Toggle theme
+      if (currentTheme === 'dark') {
+          html.setAttribute('data-theme', 'light');
+          themeToggle.classList.remove('theme-toggle--toggled');
+          localStorage.setItem('theme', 'light');
+      } else {
+          html.setAttribute('data-theme', 'dark');
+          themeToggle.classList.add('theme-toggle--toggled');
+          localStorage.setItem('theme', 'dark');
+      }
+  });
+});

@@ -6,17 +6,202 @@
     min-height: calc(100vh - 7rem);
     padding: 1rem 0;
   } */
+  :root{
+    --pico-background-color: #fff;
+    --pico-color: #373c44;
+    --pico-text-selection-color: rgba(2, 154, 232, .25);
+    --pico-muted-color: #646b79;
+    --pico-muted-border-color: #e7eaf0;
+    --pico-primary: #0172ad;
+    --pico-primary-background: #0172ad;
+    --pico-primary-border: var(--pico-primary-background);
+    --pico-primary-underline: rgba(1, 114, 173, .5);
+    --pico-primary-hover: #015887;
+    --pico-primary-hover-background: #02659a;
+    --pico-primary-hover-border: var(--pico-primary-hover-background);
+    --pico-primary-hover-underline: var(--pico-primary-hover);
+    --pico-primary-focus: rgba(2, 154, 232, .5);
+    --pico-primary-inverse: #fff;
+    --pico-secondary: #5d6b89;
+    --pico-secondary-background: #525f7a;
+    --main-color: #c2c7d0;
+    --muted-color: #7b8495;
+   }
 
   /* Hero Image */
-  article div:nth-of-type(2) {
-    display: none;
-    background-color: #374956;
-    background-image: url("/img/greentree_congregation.jpg");
-    background-position: center;
-    background-size: cover;
-    padding: 0;
+
+  #hero{
+    display: flex;
+    justify-items: center;
+    align-content: center;
+    width: auto;
+    height: 40svh;
+    text-align: center;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+  }
+
+  .greeter{
+    grid-column: 1 / span 2;
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  #avatar-container {
+    grid-column: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#avatar-container img {
+  width: 80%;
+  height: auto;
+}
+
+.skill-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  }
+
+/* Skills Card Styling */
+.skills-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem; /* Equivalent to Tailwind's gap-3 */
+  border-radius: 0.5rem; /* Equivalent to Tailwind's rounded-lg */
+  border-width: 1px;
+  padding: 0.75rem 0.5rem; /* Equivalent to Tailwind's px-2 py-3 */
+  text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Equivalent to shadow-2xs */
+  outline-offset: 2px;
+  transition-property: color, background-color;
+  transition-duration: 0.2s;
+  min-height: 7rem;
+  min-width: 2rem; /* Adjusted height to make the cards taller */
+  /* max-width: 10rem; */
+  border: 2px solid var(--pico-muted-color);
+}
+
+/* Skill Title */
+.skills-card span{
+  font-size: medium;
+}
+
+.skills-card:hover i {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease-in-out;
+}
+
+
+.skills-card i {
+  font-size: 2.5rem; /* Adjusted icon size */
+  transition: transform 0.3s ease-in-out;
+}
+
+/* Mobile Phone Screens */
+@media (max-width: 768px) {
+  .grid{
+    display: flex;
+    flex-direction: column;
+  }
+
+    .greeter {
+      order: 2;
+  }
+
+  #avatar-container {
+      order: 1;
   }
   
+  #greeter-name {
+      font-size: 1.5rem;
+  }
+
+  #hero{
+    /* justify-items: center;
+    align-content: center; */
+    height: 65svh;
+    text-align: center;
+  }
+
+  #avatar-container img {
+      width: 80%;
+  }
+
+  .skill-grid {
+    justify-content: center;
+    align-items: center;
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    }
+
+  .skills-card {
+    min-height: 4rem; /* Adjusted height for mobile */
+    min-width: 4rem; /* Adjusted width for mobile */
+    padding: none; /* Reduced padding for mobile */
+  }
+
+  .skills-card i {
+    font-size: 2rem; /* Adjusted icon size for mobile */
+    width: 2.5rem; /* Adjusted width for mobile */
+    height: 2.5rem; /* Adjusted height for mobile */
+  }
+
+  /* Hide skill titles (span) on mobile screen sizes */
+  .skills-card span {
+    display: none;
+  }
+}
+  
+
+
+  #avatar-container img {
+    filter: brightness(0) saturate(100%) invert(91%) sepia(14%) saturate(73%) hue-rotate(182deg) brightness(103%) contrast(90%);
+}
+
+
+  .card {
+    position: relative;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  .card:hover{
+    transform: scale(1.01);
+    transition: 0.3s;
+  }
+
+.project-name {
+    min-height: 2rem;
+}
+
+.project-description {
+    min-height: 5rem;
+}
+
+.project-technologies {
+    min-height: 2rem;
+    color: var(--muted-color)
+}
+
+
+
   @media (min-width: 992px) {
     .grid > div:nth-of-type(2) {
       display: block;
@@ -24,9 +209,6 @@
   }
   
   /* Footer */
-  body > footer {
-    padding: 1rem 0;
-  }
 
   #light{
     text-decoration: none;
@@ -49,3 +231,133 @@
     float: right;
     justify-content: flex-end;
   }
+
+#personal-website {
+  margin-top: 19px;
+}
+
+/* Add theme-specific styles for main page */
+[data-theme="light"] {
+  --pico-background-color: #fff;
+  --pico-color: #373c44;
+  --pico-muted-color: #646b79;
+  --pico-primary: #0172ad;
+  --pico-secondary: #5d6b89;
+  /* --main-color: #c2c7d0;
+  --muted-color: #7b8495; */
+}
+
+[data-theme="dark"] {
+  --pico-background-color: rgb(19, 22.5, 30.5);
+  --pico-color: #c2c7d0;
+  --pico-muted-color: #7b8495;
+  --pico-primary: #01aaff;
+  --pico-secondary: #969eaf;
+  --pico-muted-border-color: #202632;
+  /* --main-color: #424242;
+  --muted-color: #757575; */
+}
+
+/* Ensure avatar-container adapts to theme */
+[data-theme="light"] #avatar-container img {
+  filter: brightness(0) saturate(100%) invert(0%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(100%) contrast(100%);
+}
+
+[data-theme="dark"] #avatar-container img {
+  filter: brightness(0) saturate(100%) invert(91%) sepia(14%) saturate(73%) hue-rotate(182deg) brightness(103%) contrast(90%);
+}
+
+/* Ensure card hover effect adapts to theme */
+[data-theme="light"] .card:hover {
+  transform: scale(1.01);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme="dark"] .card:hover {
+  transform: scale(1.01);
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Theme toggle button color */
+html[data-theme="dark"] .theme-toggle {
+    color: #ffffff; /* White color for dark theme */
+}
+
+html[data-theme="light"] .theme-toggle {
+    color: #000000; /* Black color for light theme */
+}
+
+/* Footer alignment fix */
+footer {
+  padding-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#made-by {
+  margin: 0;
+  line-height: 1;
+}
+
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  line-height: 1;
+}
+
+.theme-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  color: inherit;
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  margin: 0;
+}
+
+.theme-toggle:focus {
+  outline: none;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+main > section {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+main > section:nth-child(1) {
+    animation-delay: 0ms;
+}
+
+main > section:nth-child(2) {
+    animation-delay: 200ms;
+}
+
+main > section:nth-child(3) {
+    animation-delay: 400ms;
+}
+
+nav, footer {
+    opacity: 1;
+    visibility: visible;
+    animation: none;
+}
