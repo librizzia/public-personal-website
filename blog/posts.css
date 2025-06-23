@@ -167,3 +167,27 @@ nav, footer {
   visibility: visible;
   animation: none;
 }
+
+
+/* Layout */
+#reading-progress {
+  position: fixed;
+  width: 100%;
+  height: 8px;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+#reading-progress-fill {
+  height: 8px;
+  width: 0;
+}
+
+/* Theme */
+#reading-progress-fill {
+    -webkit-transition: width 100ms ease;
+    -o-transition: width 100ms ease;
+    transition: width 100ms ease;
+    background-color: var(--pico-primary);
+}
