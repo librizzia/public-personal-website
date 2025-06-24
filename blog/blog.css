@@ -52,6 +52,7 @@ body > footer {
     float: right;
     text-align: right;
     padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 #blog {
