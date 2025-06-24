@@ -18,3 +18,9 @@
     text-shadow: 0 0 3px rgba(0, 0, 0, 0.7), 0 0 5px rgba(0, 0, 0, 0.5);
     cursor: default;
 }
+
+@media (max-width: 768px) {
+    figure {
+        padding-bottom: 2rem;
+    }
+}
