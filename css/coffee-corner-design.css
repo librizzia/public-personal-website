@@ -1,3 +1,8 @@
+#design, #branding {
+    max-width: 1024px;
+}
+
+
 .color-palette {
     display: flex;
     gap: 1rem;
@@ -109,4 +114,16 @@ nav, footer {
     opacity: 1;
     visibility: visible;
     animation: none;
+}
+
+/* Add consistent padding to the main container */
+main {
+    padding: 1rem;
+}
+
+/* Ensure consistent layout for sections */
+main > section {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 1rem;
 }

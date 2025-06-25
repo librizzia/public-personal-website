@@ -1,3 +1,7 @@
+#design, #branding {
+    max-width: 1024px;
+}
+
 .color-palette {
     display: flex;
     gap: 1rem;
