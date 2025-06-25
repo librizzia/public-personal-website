@@ -69,6 +69,7 @@
   opacity: 1;
   visibility: visible;
   background-color: unset;
+  color: unset;
   transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.5s ease;
 }
 

@@ -127,6 +127,6 @@ main {
 /* Ensure consistent layout for sections */
 main > section {
     margin: 0 auto;
-    max-width: 1200px; /* Match the width of the design page */
+    max-width: 1200px;
     padding: 1rem;
 }
