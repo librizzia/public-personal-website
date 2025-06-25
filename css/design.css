@@ -108,6 +108,12 @@
 }
 
 /* Footer */
+/* Ensure consistent scrollbar behavior across all pages */
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+}
+
 
 /* Footer alignment fix */
 footer {

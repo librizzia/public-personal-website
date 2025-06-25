@@ -24,3 +24,109 @@
         padding-bottom: 2rem;
     }
 }
+
+
+/* Ensure consistent scrollbar behavior across all pages */
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+}
+
+/* Footer */
+
+/* Footer alignment fix */
+footer {
+    padding-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#light{
+text-decoration: none;
+background-color:transparent
+}
+
+#dark{
+text-decoration: none;
+background-color:transparent
+}
+
+#made-by{
+float: left;
+}
+
+/* Ensure theme-switcher and toggle are consistent with other pages */
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    line-height: 1;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin: 0;
+}
+
+.theme-toggle:focus {
+    outline: none;
+}
+
+/* Add theme-specific styles for the theme-switcher in light mode */
+[data-theme="light"] .theme-switcher {
+    color: var(--pico-color);
+}
+
+[data-theme="light"] .theme-toggle {
+    color: inherit;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+main > section {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+nav, footer {
+    opacity: 1;
+    visibility: visible;
+    animation: none;
+}
+
+/* Aligning greentree-design.css with design.css */
+
+/* Add consistent padding to the main container */
+main {
+    padding: 1rem;
+}
+
+/* Ensure consistent layout for sections */
+main > section {
+    margin: 0 auto;
+    max-width: 1200px; /* Match the width of the design page */
+    padding: 1rem;
+}

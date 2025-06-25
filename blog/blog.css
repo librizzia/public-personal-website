@@ -97,6 +97,12 @@ html[data-theme="light"] .theme-toggle {
     color: #000000;
 }
 
+/* Ensure consistent scrollbar behavior across all pages */
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+}
+
 /* Footer alignment fix */
 footer {
     padding-bottom: 1.5rem;

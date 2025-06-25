@@ -420,3 +420,8 @@ nav, footer {
   font-weight: normal; /* Use normal font weight */
   box-shadow: none; /* Remove shadow */
 }
+
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
+}
