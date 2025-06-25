@@ -26,6 +26,9 @@
     --pico-secondary-background: #525f7a;
     --main-color: #c2c7d0;
     --muted-color: #7b8495;
+    --pico-green: #00895A;
+    --pico-red: #EE402E;
+    --pico-blue: #017FC0;
    }
 
   /* Hero Image */
@@ -224,10 +227,20 @@
     height: 100%;
   }
 
-  .card:hover{
-    transform: scale(1.01);
-    transition: 0.3s;
-  }
+ /*Card Hover Effect */
+.card figure img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover figure img {
+  transform: translateY(-10px);
+
+} 
+
+.card:hover {
+  background: linear-gradient(to bottom, var(--card-color, var(--pico-primary)) 0%, transparent 40%, transparent 100%);
+  transition: background 0.3s ease-in-out;
+}
 
 .project-name {
     min-height: 2rem;
@@ -307,17 +320,6 @@
 
 [data-theme="dark"] #avatar-container img {
   filter: brightness(0) saturate(100%) invert(91%) sepia(14%) saturate(73%) hue-rotate(182deg) brightness(103%) contrast(90%);
-}
-
-/* Ensure card hover effect adapts to theme */
-[data-theme="light"] .card:hover {
-  transform: scale(1.01);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .card:hover {
-  transform: scale(1.01);
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
 /* Theme toggle button color */

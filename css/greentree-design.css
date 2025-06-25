@@ -27,8 +27,12 @@
     figure {
         padding-bottom: 2rem;
     }
-}
 
+    .color {
+        width: 6rem;
+        height: 5rem;
+    }
+}
 
 /* Ensure consistent scrollbar behavior across all pages */
 html {

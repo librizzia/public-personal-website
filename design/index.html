@@ -93,6 +93,13 @@
         </footer>
         <!-- Footer -->
     </main>
+    <script>
+        document.querySelectorAll('.article-footer a').forEach(link => {
+            link.addEventListener('click', event => {
+                event.stopPropagation();
+            });
+        });
+    </script>
 </body>
 
 </html>
