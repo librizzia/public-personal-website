@@ -49,8 +49,27 @@ function updateGreeterStyles() {
     }
 }
 
-// Add hover event listeners to toggle coolMode
-avatarContainer.addEventListener('mouseenter', () => {
+// Function to check if the screen is small
+function isSmallScreen() {
+    return window.innerWidth <= 768; // Adjust the breakpoint as needed
+}
+
+// Ensure toggleCoolMode is always active on smaller screens
+function setupClickListenerForSmallScreens() {
+    if (isSmallScreen()) {
+        avatarContainer.removeEventListener('click', toggleCoolMode); // Remove any existing listener to avoid duplicates
+        avatarContainer.addEventListener('click', toggleCoolMode);
+        avatarContainer.removeEventListener('mouseenter', handleMouseEnter);
+        avatarContainer.removeEventListener('mouseleave', handleMouseLeave);
+    } else {
+        avatarContainer.removeEventListener('click', toggleCoolMode);
+        avatarContainer.addEventListener('mouseenter', handleMouseEnter);
+        avatarContainer.addEventListener('mouseleave', handleMouseLeave);
+    }
+}
+
+// Separate hover logic into functions
+function handleMouseEnter() {
     console.log('Mouse entered avatar container. coolMode:', coolMode);
     clearTimeout(hoverTimeout);
     hoverTimeout = setTimeout(() => {
@@ -59,9 +78,25 @@ avatarContainer.addEventListener('mouseenter', () => {
         updateSunglassesVisibility();
         updateGreeterStyles();
     }, 500); // 0.5 seconds delay
-});
+}
 
-avatarContainer.addEventListener('mouseleave', () => {
+function handleMouseLeave() {
     console.log('Mouse left avatar container. coolMode:', coolMode);
     clearTimeout(hoverTimeout);
-});
+}
+
+// Function to toggle coolMode
+function toggleCoolMode() {
+    console.log('Avatar clicked. coolMode:', coolMode);
+    coolMode = !coolMode; // Toggle coolMode state
+    updateSunglassesVisibility();
+    updateGreeterStyles();
+}
+
+// Update hover event listeners
+avatarContainer.addEventListener('mouseenter', handleMouseEnter);
+avatarContainer.addEventListener('mouseleave', handleMouseLeave);
+
+// Set up the listener on load and on resize
+setupClickListenerForSmallScreens();
+window.addEventListener('resize', setupClickListenerForSmallScreens);
