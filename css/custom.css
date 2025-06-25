@@ -54,12 +54,31 @@
     margin-bottom: auto;
   }
 
+.hidden {
+  opacity: 0.5;
+  transition-duration: 0.7s;
+}
+
+.highlight {
+  background-color: var(--pico-mark-background-color);
+  color: var(--pico-mark-color);
+  transition-duration: 0.7s;
+}
+
+.transition {
+  opacity: 1;
+  visibility: visible;
+  background-color: unset;
+  transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.5s ease;
+}
+
   #avatar-container {
     grid-column: 3;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 #avatar-container img {
   width: 80%;
   height: auto;
@@ -93,6 +112,28 @@
   min-width: 2rem; /* Adjusted height to make the cards taller */
   /* max-width: 10rem; */
   border: 2px solid var(--pico-muted-color);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Active skill card style */
+.skill-active {
+    background-color: var(--main-color); /* Example: Highlighted yellow */
+}
+
+/* Ensure hover effect does not apply to active cards */
+.skills-card.skill-active:hover i {
+    transform: none; /* Reset transformation */
+    transition: none; /* Disable hover animation */
+}
+
+/* Remove celebrate animation styles */
+.skill-grid.celebrate .skills-card {
+  animation: none;
+}
+
+.skill-grid.celebrate .skills-card::before,
+.skill-grid.celebrate .skills-card::after {
+  content: none;
 }
 
 /* Skill Title */
@@ -338,6 +379,7 @@ footer {
     }
 }
 
+/* Adjusted fade-in animation for faster sequential section loading */
 main > section {
     opacity: 0;
     visibility: hidden;
@@ -345,19 +387,36 @@ main > section {
 }
 
 main > section:nth-child(1) {
-    animation-delay: 0ms;
+    animation-delay: 0s;
 }
 
 main > section:nth-child(2) {
-    animation-delay: 100ms;
+    animation-delay: 0.25s;
 }
 
 main > section:nth-child(3) {
-    animation-delay: 200ms;
+    animation-delay: 0.5s;
+}
+
+main > section:nth-child(4) {
+    animation-delay: 0.75s;
 }
 
 nav, footer {
     opacity: 1;
     visibility: visible;
     animation: none;
+}
+
+/* Simplify the number badge style to plain text */
+.number-badge {
+  position: absolute;
+  top: 0.5rem; /* Adjust as needed */
+  right: 0.5rem; /* Adjust as needed */
+  background: none; /* Remove background color */
+  color: inherit; /* Use the card's text color */
+  border: none; /* Remove border */
+  font-size: 0.75rem; /* Adjust font size as needed */
+  font-weight: normal; /* Use normal font weight */
+  box-shadow: none; /* Remove shadow */
 }
