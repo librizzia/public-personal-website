@@ -104,6 +104,14 @@ footer {
       color: #000000; /* Black color for light theme */
   }
   
+
+
+  /* Ensure consistent scrollbar behavior across all pages */
+  html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+  }
+
   /* Footer alignment fix */
   footer {
     padding-bottom: 1.5rem;
@@ -166,4 +174,28 @@ nav, footer {
   opacity: 1;
   visibility: visible;
   animation: none;
+}
+
+
+/* Layout */
+#reading-progress {
+  position: fixed;
+  width: 100%;
+  height: 8px;
+  z-index: 9999;
+  top: 0;
+  left: 0;
+}
+
+#reading-progress-fill {
+  height: 8px;
+  width: 0;
+}
+
+/* Theme */
+#reading-progress-fill {
+    -webkit-transition: width 100ms ease;
+    -o-transition: width 100ms ease;
+    transition: width 100ms ease;
+    background-color: var(--pico-primary);
 }

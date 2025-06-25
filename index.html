@@ -18,8 +18,10 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="/scripts/theme-switcher.js" defer></script>
     <script src="/scripts/skills.js" defer></script>
-    <script defer data-domain="anthonylibrizzi.com" src="https://plausible.io/js/plausible.js"></script>
+    <script src="/scripts/cool-Mode.js" defer></script>
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "e42b1b928fac4bf08f3600cfa9086a7f"}'></script>
     <title>Anthony Librizzi</title>
+    <link rel="preload" href="./img/export_portrait_v2.svg" as="image">
 </head>
 
 <body>
@@ -30,8 +32,9 @@
                 <li><strong>Anthony L.</strong></li>
             </ul>
             <ul>
-                <li><a style="background-color:transparent" href="#">Home</a></li>
-                <li><a style="background-color:transparent" href="blog/blog.html">Blog</a></li>
+                <li><a style="background-color:var(--pico-muted-border-color)" href="/">Home</a></li>
+                <li><a style="background-color:transparent" href="/blog/">Blog</a></li>
+                <li><a style="background-color:transparent" href="/design/">Design</a></li>
             </ul>
         </nav>
 
@@ -42,8 +45,7 @@
             <div class="grid">
                 <div class="greeter">
                     <h1 id="greeter-name">Hi, I'm Anthony Librizzi</h1>
-                    <p>Welcome to my website. I'm seeking opportunities to bring your ideas to <strong>life</strong>. </p>
-                    <p>Bringing ideas to life with interactive, well-crafted web experiences—always open to new challenges!</p>
+                    <p><span>I'm a</span> <span>software engineer</span> <span>and</span> <span>graphic designer</span> <span>focused on creating</span> <span>interactive</span>, <span>engaging</span> <span>digital experiences.</span> <span>I'm always eager to take on new challenges and bring</span> <span>bold ideas</span> <span>to life.</span></p>
                 </div>
                 <div id="avatar-container">
                     <img src="./img/export_portrait_v2.svg" alt="Avatar Icon">
@@ -101,7 +103,7 @@
             <!--Project Cards-->
             <div class="grid">
                 <!-- Greentree Docs -->
-                <article class="card">
+                <article class="card" style="--card-color: var(--pico-green);">
                     <figure>
                         <img src="./img/project-images/greentree-docs-dark-v2.webp" alt="Greentree Docs Preview" style="width:100%">
                     </figure>
@@ -114,7 +116,7 @@
                     </div>
                 </article>
                 <!-- React Budget App -->
-                <article class="card">
+                <article class="card" style="--card-color: var(--pico-blue);">
                     <figure>
                         <img src="./img/project-images/react-budget-app.webp" alt="Avatar" style="width:100%">
                     </figure>
@@ -127,7 +129,7 @@
                         </div>
                 </article>
                 <!-- Angular To Do -->
-                <article class="card">
+                <article class="card"  style="--card-color: var(--pico-red);">
                     <figure>
                         <img src="./img/project-images/angular-to-do.webp" alt="Avatar" style="width:100%">
                     </figure>

@@ -26,6 +26,9 @@
     --pico-secondary-background: #525f7a;
     --main-color: #c2c7d0;
     --muted-color: #7b8495;
+    --pico-green: #00895A;
+    --pico-red: #EE402E;
+    --pico-blue: #017FC0;
    }
 
   /* Hero Image */
@@ -54,12 +57,32 @@
     margin-bottom: auto;
   }
 
+.hidden {
+  opacity: 0.5;
+  transition-duration: 0.7s;
+}
+
+.highlight {
+  background-color: var(--pico-mark-background-color);
+  color: var(--pico-mark-color);
+  transition-duration: 0.7s;
+}
+
+.transition {
+  opacity: 1;
+  visibility: visible;
+  background-color: unset;
+  color: unset;
+  transition: opacity 0.5s ease, visibility 0.5s ease, background-color 0.5s ease;
+}
+
   #avatar-container {
     grid-column: 3;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 #avatar-container img {
   width: 80%;
   height: auto;
@@ -93,6 +116,28 @@
   min-width: 2rem; /* Adjusted height to make the cards taller */
   /* max-width: 10rem; */
   border: 2px solid var(--pico-muted-color);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Active skill card style */
+.skill-active {
+    background-color: var(--main-color); /* Example: Highlighted yellow */
+}
+
+/* Ensure hover effect does not apply to active cards */
+.skills-card.skill-active:hover i {
+    transform: none; /* Reset transformation */
+    transition: none; /* Disable hover animation */
+}
+
+/* Remove celebrate animation styles */
+.skill-grid.celebrate .skills-card {
+  animation: none;
+}
+
+.skill-grid.celebrate .skills-card::before,
+.skill-grid.celebrate .skills-card::after {
+  content: none;
 }
 
 /* Skill Title */
@@ -182,10 +227,20 @@
     height: 100%;
   }
 
-  .card:hover{
-    transform: scale(1.01);
-    transition: 0.3s;
-  }
+ /*Card Hover Effect */
+.card figure img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover figure img {
+  transform: translateY(-10px);
+
+} 
+
+.card:hover {
+  background: linear-gradient(to bottom, var(--card-color, var(--pico-primary)) 0%, transparent 40%, transparent 100%);
+  transition: background 0.3s ease-in-out;
+}
 
 .project-name {
     min-height: 2rem;
@@ -267,17 +322,6 @@
   filter: brightness(0) saturate(100%) invert(91%) sepia(14%) saturate(73%) hue-rotate(182deg) brightness(103%) contrast(90%);
 }
 
-/* Ensure card hover effect adapts to theme */
-[data-theme="light"] .card:hover {
-  transform: scale(1.01);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-[data-theme="dark"] .card:hover {
-  transform: scale(1.01);
-  background-color: rgba(0, 0, 0, 0.1);
-}
-
 /* Theme toggle button color */
 html[data-theme="dark"] .theme-toggle {
     color: #ffffff; /* White color for dark theme */
@@ -338,6 +382,7 @@ footer {
     }
 }
 
+/* Adjusted fade-in animation for faster sequential section loading */
 main > section {
     opacity: 0;
     visibility: hidden;
@@ -345,19 +390,41 @@ main > section {
 }
 
 main > section:nth-child(1) {
-    animation-delay: 0ms;
+    animation-delay: 0s;
 }
 
 main > section:nth-child(2) {
-    animation-delay: 200ms;
+    animation-delay: 0.25s;
 }
 
 main > section:nth-child(3) {
-    animation-delay: 400ms;
+    animation-delay: 0.5s;
+}
+
+main > section:nth-child(4) {
+    animation-delay: 0.75s;
 }
 
 nav, footer {
     opacity: 1;
     visibility: visible;
     animation: none;
+}
+
+/* Simplify the number badge style to plain text */
+.number-badge {
+  position: absolute;
+  top: 0.5rem; /* Adjust as needed */
+  right: 0.5rem; /* Adjust as needed */
+  background: none; /* Remove background color */
+  color: inherit; /* Use the card's text color */
+  border: none; /* Remove border */
+  font-size: 0.75rem; /* Adjust font size as needed */
+  font-weight: normal; /* Use normal font weight */
+  box-shadow: none; /* Remove shadow */
+}
+
+html {
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
 }

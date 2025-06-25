@@ -52,6 +52,7 @@ body > footer {
     float: right;
     text-align: right;
     padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 #blog {
@@ -94,6 +95,12 @@ html[data-theme="dark"] .theme-toggle {
 
 html[data-theme="light"] .theme-toggle {
     color: #000000;
+}
+
+/* Ensure consistent scrollbar behavior across all pages */
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
 }
 
 /* Footer alignment fix */

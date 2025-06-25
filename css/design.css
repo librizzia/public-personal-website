@@ -1,0 +1,199 @@
+/* Define a CSS variable for hover effect opacity */
+:root {
+    --hover-opacity: 0.7;
+}
+
+#design {
+    padding: 1rem;
+}
+
+/* Design Page Styles */
+#design h3 {
+    margin-top: 0.4rem;
+}
+
+/* Add custom styling for design cards */
+.design-card {
+    aspect-ratio: 4 / 3;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+/* Add background images for design cards */
+.design-card:nth-child(1) {
+    background-image: url('/img/design-images/coffee-corner.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+.design-card:nth-child(2) {
+    background-image: url('/img/design-images/greentree-design.webp');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Add hover effect for design cards */
+.design-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, var(--hover-opacity));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+}
+
+.design-card:hover::after {
+    opacity: 1;
+}
+
+/* Ensure title and description are hidden by default */
+.design-card .design-content {
+    width: 80%;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 2;
+}
+
+/* Increase specificity for h2 and p inside design-content */
+.design-card .design-content h2 {
+    color: white;
+}
+
+.design-card .design-content p {
+    color: white;
+}
+
+.design-card:hover .design-content {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+/* Ensure the article-footer is hidden by default */
+.design-card .article-footer {
+    visibility: hidden;
+    z-index: 2;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.3s ease;
+}
+
+/* Show the article-footer on hover */
+.design-card:hover .article-footer {
+    visibility: visible;
+    opacity: 1;
+    transition-delay: 0s;
+}
+
+/* Center the article-footer at the bottom of the design card */
+.article-footer {
+    margin-top: auto;
+    text-align: center;
+    margin: 1rem 0;
+}
+
+/* Footer */
+/* Ensure consistent scrollbar behavior across all pages */
+html {
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+}
+
+
+/* Footer alignment fix */
+footer {
+    padding-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#light{
+text-decoration: none;
+background-color:transparent
+}
+
+#dark{
+text-decoration: none;
+background-color:transparent
+}
+
+#made-by{
+float: left;
+}
+
+/* Ensure theme-switcher and toggle are consistent with other pages */
+.theme-switcher {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 0;
+    padding: 0;
+    height: auto;
+    line-height: 1;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: inherit;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    margin: 0;
+}
+
+.theme-toggle:focus {
+    outline: none;
+}
+
+/* Add theme-specific styles for the theme-switcher in light mode */
+[data-theme="light"] .theme-switcher {
+    color: var(--pico-color);
+}
+
+[data-theme="light"] .theme-toggle {
+    color: inherit;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        visibility: hidden;
+    }
+    to {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+main > section {
+    opacity: 0;
+    visibility: hidden;
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+nav, footer {
+    opacity: 1;
+    visibility: visible;
+    animation: none;
+}
