@@ -57,7 +57,7 @@ function isSmallScreen() {
 // Ensure toggleCoolMode is always active on smaller screens
 function setupClickListenerForSmallScreens() {
     if (isSmallScreen()) {
-        avatarContainer.removeEventListener('click', toggleCoolMode); // Remove any existing listener to avoid duplicates
+        avatarContainer.removeEventListener('click', toggleCoolMode);
         avatarContainer.addEventListener('click', toggleCoolMode);
         avatarContainer.removeEventListener('mouseenter', handleMouseEnter);
         avatarContainer.removeEventListener('mouseleave', handleMouseLeave);
@@ -70,25 +70,21 @@ function setupClickListenerForSmallScreens() {
 
 // Separate hover logic into functions
 function handleMouseEnter() {
-    console.log('Mouse entered avatar container. coolMode:', coolMode);
     clearTimeout(hoverTimeout);
     hoverTimeout = setTimeout(() => {
-        coolMode = !coolMode; // Toggle coolMode state
-        console.log(coolMode ? 'Entering cool mode. ' + coolMode : 'Exiting cool mode. ' + coolMode);
+        coolMode = !coolMode;
         updateSunglassesVisibility();
         updateGreeterStyles();
-    }, 500); // 0.5 seconds delay
+    }, 500);
 }
 
 function handleMouseLeave() {
-    console.log('Mouse left avatar container. coolMode:', coolMode);
     clearTimeout(hoverTimeout);
 }
 
 // Function to toggle coolMode
 function toggleCoolMode() {
-    console.log('Avatar clicked. coolMode:', coolMode);
-    coolMode = !coolMode; // Toggle coolMode state
+    coolMode = !coolMode;
     updateSunglassesVisibility();
     updateGreeterStyles();
 }
